@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airlin.controller.TablaFacturasController">
+   <children>
+      <HBox spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <VBox spacing="5.0">
+               <children>
+                  <TableView fx:id="tabla" onMouseClicked="#seleccionarTupla">
+                     <columns>
+                        <TableColumn fx:id="colId" editable="false" prefWidth="87.0" resizable="false" sortable="false" text="id Factura" />
+                        <TableColumn fx:id="colFecha" editable="false" minWidth="0.0" prefWidth="160.0" resizable="false" sortable="false" text="fecha" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Button fx:id="buttonActualizarTabla" mnemonicParsing="false" onAction="#actualizarTabla" text="Actualizar tabla" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <TableView fx:id="tabla1" focusTraversable="false" prefHeight="58.0" prefWidth="501.0">
+                     <columns>
+                        <TableColumn fx:id="colId1" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="id" />
+                        <TableColumn fx:id="colNombre" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="nombre" />
+                        <TableColumn fx:id="colApellidos" editable="false" prefWidth="142.0" resizable="false" sortable="false" text="apellidos" />
+                        <TableColumn fx:id="colDni" editable="false" prefWidth="87.0" resizable="false" sortable="false" text="dni" />
+                        <TableColumn fx:id="colTelefono" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="telefono" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" spacing="5.0" />
+                  <Label text="fecha" />
+                  <DatePicker fx:id="pickerFecha" />
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Button fx:id="buttonInsertar" mnemonicParsing="false" onAction="#insertarFactura" text="Insertar" />
+                        <Button fx:id="buttonActualizar" mnemonicParsing="false" onAction="#actualizarFactura" text="Actualizar" />
+                        <Button fx:id="buttonBorrar" mnemonicParsing="false" onAction="#borrarFactura" text="Borrar" />
+                        <Button fx:id="buttonLimpiar" mnemonicParsing="false" onAction="#limpiarFormulario" text="Limpiar" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airlin.controller.TablaBilletesController">
+   <children>
+      <HBox spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <VBox spacing="5.0">
+               <children>
+                  <TableView fx:id="tabla" onMouseClicked="#seleccionarTupla">
+                     <columns>
+                        <TableColumn fx:id="colId" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="id" />
+                        <TableColumn fx:id="colPlaza" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="plaza" />
+                        <TableColumn fx:id="colPrecio" editable="false" prefWidth="142.0" resizable="false" sortable="false" text="precio" />
+                        <TableColumn fx:id="colFecha" editable="false" prefWidth="87.0" resizable="false" sortable="false" text="fecha" />
+                        <TableColumn fx:id="colIdFactura" editable="false" prefWidth="87.0" resizable="false" sortable="false" text="id Factura" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Button fx:id="buttonActualizarTabla" mnemonicParsing="false" onAction="#actualizarTabla" text="Actualizar tabla" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <Label text="plaza" />
+                  <TextField fx:id="textPlaza" />
+                  <Label text="precio" />
+                  <TextField fx:id="textPrecio" />
+                  <Label text="fecha" />
+                  <DatePicker fx:id="pickerFecha" />
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Button fx:id="buttonInsertar" mnemonicParsing="false" onAction="#insertarBillete" text="Insertar" />
+                        <Button fx:id="buttonActualizar" mnemonicParsing="false" onAction="#actualizarBillete" text="Actualizar" />
+                        <Button fx:id="buttonBorrar" mnemonicParsing="false" onAction="#borrarBillete" text="Borrar" />
+                        <Button fx:id="buttonLimpiar" mnemonicParsing="false" onAction="#limpiarFormulario" text="Limpiar" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="airlin.controller.SeleccionarClienteController">
+   <children>
+      <VBox spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <TableView fx:id="tabla" onMouseClicked="#seleccionarTupla">
+               <columns>
+                  <TableColumn fx:id="colId" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="id" />
+                  <TableColumn fx:id="colNombre" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="nombre" />
+                  <TableColumn fx:id="colApellidos" editable="false" prefWidth="142.0" resizable="false" sortable="false" text="apellidos" />
+                  <TableColumn fx:id="colDni" editable="false" prefWidth="87.0" resizable="false" sortable="false" text="dni" />
+                  <TableColumn fx:id="colTelefono" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="telefono" />
+               </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Button fx:id="buttonActualizarTabla" mnemonicParsing="false" onAction="#actualizarTabla" text="Actualizar tabla" />
+                        <Button fx:id="buttonAceptar" mnemonicParsing="false" onAction="#aceptar" text="Seleccionar" />
+                        <Button fx:id="buttonCancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
